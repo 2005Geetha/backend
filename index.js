@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");  // Add path module
 const { User } = require("./models/mongo");
 const app = express();
-
+require('dotenv').config();
 // Set EJS as the view engine
 app.set("view engine", "ejs");
 
