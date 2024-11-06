@@ -15,7 +15,7 @@ app.get('/advice', (req, res) => {
 });
 
 // Route to render the login form
-app.get("/", (req, res) => {
+app.get("/login", (req, res) => {
     res.render("login", { error: null });  // Pass error as null on initial load
 });
 
