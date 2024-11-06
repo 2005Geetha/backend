@@ -1,12 +1,16 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://127.0.0.1:27017/Aarogya")
-    .then(() => {
-        console.log("Connection established successfully");
-    })
-    .catch((error) => {
-        console.error("Error in connection:", error);
-    });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/Aarogya", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+.then(() => {
+    console.log("Connection established successfully");
+})
+.catch((error) => {
+    console.error("Error in connection:", error);
+});
+
 
 // Define the user schema
 const userSchema = new mongoose.Schema({
